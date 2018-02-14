@@ -9,27 +9,41 @@ import { HeroService } from '../hero.service';
   styleUrls: ['./heroes.component.css']
 })
 export class HeroesComponent implements OnInit {
+  /*------------------le 1 cas Test Simple------------------------------*/
   // hero = 'Windstorm';
-  /*------------------le premier cas D'initialisation------------------------------*/
+  /*------------------le 2 cas D'initialisation------------------------------*/
   // hero: Hero = {
   //   id: 1,
   //   name: 'Windstorm'
   // };
-  /*----------------------- le 2eme cas:  Affichage de la liste des Heroes -------------------*/
+  /*----------------------- le 3 cas:  Affichage de la liste des Heroes -------------------*/
   // heroes = HEROES;
   // constructor() { }
-  /*----------------------- le 3eme cas:  Services -------------------*/
-  selectedHero: Hero;
+  /*----------------------- le 4 cas:  Services -------------------*/
+  // selectedHero: Hero;
+  // heroes: Hero[];
+  //
+  // constructor(private heroService: HeroService) { }
+  // ngOnInit() {
+  //   this.getHeroes();
+  // }
+  // onSelect(hero: Hero): void {
+  //   this.selectedHero = hero;
+  // }
+  // //Cette fonction pour récupérer les héros du service
+  // getHeroes(): void {
+  //   this.heroService.getHeroes()
+  //     .subscribe(heroes => this.heroes = heroes);
+  // }
+  /*----------------------- le 5 cas:  Naviguer vers les détails du héros -------------------*/
   heroes: Hero[];
 
   constructor(private heroService: HeroService) { }
+
   ngOnInit() {
     this.getHeroes();
   }
-  onSelect(hero: Hero): void {
-    this.selectedHero = hero;
-  }
-  //Cette fonction pour récupérer les héros du service
+
   getHeroes(): void {
     this.heroService.getHeroes()
       .subscribe(heroes => this.heroes = heroes);
